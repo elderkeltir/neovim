@@ -28,7 +28,7 @@ vim.keymap.set('n', '<leader>ci', builtin.lsp_implementations, opts)
 
 -- these are for checking
 vim.keymap.set("n", "<leader>ck", function() vim.lsp.buf.hover() end, opts)
-vim.keymap.set("i", "<leader>ch", function() vim.lsp.buf.signature_help() end, opts)
+vim.keymap.set("n", "<leader>ch", function() vim.lsp.buf.signature_help() end, opts)
     -- need go to symbol in doc
     -- go to symbol in project
     -- 
