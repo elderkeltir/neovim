@@ -33,7 +33,19 @@ local function cmake_build()
     end
 end
 
+local function cmake_clean()
+    local project_root = find_project_root()
+    if project_root ~= nil then
+        local command = string.format('<cmd>:! cd %s && rm -rf build<CR>', project_root)
+        --os.execute(command)
+        return command
+    else
+        print("Project root not found.")
+    end
+end
+
 M.cmake_cofigure = cmake_project
 M.cmake_build = cmake_build
+M.cmake_clean = cmake_clean
 
 return M

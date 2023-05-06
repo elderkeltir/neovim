@@ -21,6 +21,7 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 vim.keymap.set("n", "<leader>kr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>ks", "<cmd>w<CR>")
 vim.keymap.set("n", "<leader>ka", "<cmd>wa<CR>")
+vim.keymap.set("n", "<leader>kq", "<cmd>qa<CR>")
 
 --check this one
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
@@ -31,4 +32,5 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set('n', '<leader>pc', custom.cmake_cofigure(), {silent = false})
 vim.keymap.set('n', '<leader>pb', custom.cmake_build(), {silent = false})
+vim.keymap.set('n', '<leader>pr', custom.cmake_clean(), {silent = false})
 
