@@ -24,11 +24,10 @@ vim.keymap.set("n", "<leader>ka", "<cmd>wa<CR>")
 vim.keymap.set("n", "<leader>kq", "<cmd>qa<CR>")
 
 --check this one
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<leader>kk", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>kj", "<cmd>lprev<CR>zz")
 
 vim.keymap.set('n', '<leader>pc', custom.cmake_cofigure(), {silent = false})
 vim.keymap.set('n', '<leader>pb', custom.cmake_build(), {silent = false})

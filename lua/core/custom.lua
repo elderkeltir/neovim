@@ -18,7 +18,7 @@ local function cmake_project()
         --os.execute(command)
         return command
     else
-        print("Project root not found.")
+        return ""
     end
 end
 
@@ -29,7 +29,7 @@ local function cmake_build()
         --os.execute(command)
         return command
     else
-        print("Project root not found.")
+        return ""
     end
 end
 
@@ -40,7 +40,7 @@ local function cmake_clean()
         --os.execute(command)
         return command
     else
-        print("Project root not found.")
+        return ""
     end
 end
 

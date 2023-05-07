@@ -1,3 +1,3 @@
 require("core.remap")
-require("core.cofig")
+require("core.config")
 require("core.packer")

@@ -36,11 +36,19 @@ return require('packer').startup(function(use)
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-}
-use {
-    'goolord/alpha-nvim',
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.dashboard'.config)
-    end
+    }
+    use {
+        'goolord/alpha-nvim',
+        requires = {
+            { 'kyazdani42/nvim-web-devicons'}
+        }
+    }
+    use { 'kalvinpearce/ShaderHighlight' }
+    use { 'Shatur/neovim-session-manager',
+    requires = {
+        { 'nvim-lua/plenary.nvim'},
+        { 'stevearc/dressing.nvim'}, --optional
+        { 'nvim-telescope/telescope-ui-select.nvim'} --optional
+    }
 }
 end)
