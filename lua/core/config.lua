@@ -33,3 +33,5 @@ vim.cmd [[packadd termdebug]]
 vim.api.nvim_create_autocmd("TermOpen", {
     command = "wincmd H | wincmd l | wincmd K | resize +5"
 })
+
+

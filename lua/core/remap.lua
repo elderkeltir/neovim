@@ -33,3 +33,12 @@ vim.keymap.set('n', '<leader>pc', custom.cmake_cofigure(), {silent = false})
 vim.keymap.set('n', '<leader>pb', custom.cmake_build(), {silent = false})
 vim.keymap.set('n', '<leader>pr', custom.cmake_clean(), {silent = false})
 
+-- window
+vim.keymap.set("n", "<leader>wk", "<C-w>k")
+vim.keymap.set("n", "<leader>wj", "<C-w>j")
+vim.keymap.set("n", "<leader>wh", "<C-w>h")
+vim.keymap.set("n", "<leader>wl", "<C-w>l")
+vim.keymap.set("n", "<leader>wv", "<C-w>v")
+vim.keymap.set("n", "<leader>ws", "<C-w>s")
+vim.keymap.set("n", "<leader>wc", "<cmd>q<CR>")
+

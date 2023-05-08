@@ -14,7 +14,7 @@ end
 local function cmake_project()
     local project_root = find_project_root()
     if project_root ~= nil then
-        local command = string.format('<cmd>:! cd %s && cmake -S . -B build<CR>', project_root)
+        local command = string.format('<cmd>:! cd %s && cmake -S ./ -B ./build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER:FILEPATH=/usr/local/bin/clang16 -DCMAKE_CXX_COMPILER:FILEPATH=/usr/local/bin/clang++16 -G Ninja<CR>', project_root)
         --os.execute(command)
         return command
     else
@@ -25,7 +25,7 @@ end
 local function cmake_build()
     local project_root = find_project_root()
     if project_root ~= nil then
-        local command = string.format('<cmd>:! cd %s && cmake --build build<CR>', project_root)
+        local command = string.format('<cmd>:! cd %s/build && ninja<CR>', project_root)
         --os.execute(command)
         return command
     else
@@ -43,6 +43,7 @@ local function cmake_clean()
         return ""
     end
 end
+
 
 M.cmake_cofigure = cmake_project
 M.cmake_build = cmake_build

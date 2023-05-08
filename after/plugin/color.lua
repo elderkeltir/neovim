@@ -52,5 +52,33 @@ require('rose-pine').setup({
 -- Set colorscheme after options
 vim.cmd('colorscheme rose-pine')
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })	
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })	
+local elements = {
+    'Normal',
+    'NormalFloat',
+	'NormalNC',
+	--'Comment',
+	--'Constant',
+	--'Special',
+	--'Identifier',
+    --'Statement',
+	--'PreProc',
+	--'Type',
+	--'Underlined',
+	--'Todo',
+	--'String',
+	--'Function',
+    --'Conditional',
+	--'Repeat',
+	--'Operator',
+	--'Structure',
+	--'LineNr',
+	--'NonText',
+    'SignColumn',
+	--'CursorLineNr',
+	--'EndOfBuffer',
+}
+
+for k,v in pairs(elements) do
+    vim.api.nvim_set_hl(0, v, { bg = "none" })	
+end
+
