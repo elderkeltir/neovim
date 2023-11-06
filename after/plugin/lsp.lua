@@ -39,6 +39,19 @@ end)
 -- You'll need to list the servers installed in your system
 lsp.setup_servers({'clangd', 'lua_ls', 'cmake'})
 
+require('lspconfig').pylsp.setup{
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = {'W391'},
+          maxLineLength = 100
+        }
+      }
+    }
+  }
+}
+
 -- (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
