@@ -37,22 +37,11 @@ end)
 
 -- When you don't have mason.nvim installed
 -- You'll need to list the servers installed in your system
-lsp.setup_servers({'clangd', 'lua_ls', 'cmake'})
+lsp.setup_servers({'pyright'})
 
-require('lspconfig').pylsp.setup{
-  settings = {
-    pylsp = {
-      plugins = {
-        pycodestyle = {
-          ignore = {'W391'},
-          maxLineLength = 100
-        }
-      }
-    }
-  }
-}
+require'lspconfig'.pyright.setup{}
 
 -- (Optional) Configure lua language server for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+--require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.setup()
