@@ -17,7 +17,7 @@ vim.opt.undofile = true
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
---vim.opt.hlsearch = false
+vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
@@ -27,11 +27,4 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-
-vim.cmd [[packadd termdebug]]
-
-vim.api.nvim_create_autocmd("TermOpen", {
-    command = "wincmd H | wincmd l | wincmd K | resize +5"
-})
-
 

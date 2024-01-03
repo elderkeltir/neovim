@@ -12,10 +12,11 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("x", "<leader>kw", [["_dP]])
+vim.keymap.set("x", "p", [["_dP]])
 
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set({"n", "v"}, "<leader>Y", "viwy")
+vim.keymap.set({"n", "v"}, "<leader>P", "viwp")
+vim.keymap.set("n", "<leader>y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "<leader>kr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
@@ -32,6 +33,7 @@ vim.keymap.set("n", "<leader>kj", "<cmd>lprev<CR>zz")
 vim.keymap.set('n', '<leader>pc', custom.cmake_cofigure(), {silent = false})
 vim.keymap.set('n', '<leader>pb', custom.cmake_build(), {silent = false})
 vim.keymap.set('n', '<leader>pr', custom.cmake_clean(), {silent = false})
+vim.keymap.set('n', '<leader>pm', custom.make_build(), {silent = false})
 
 -- window
 vim.keymap.set("n", "<leader>wk", "<C-w>k")
@@ -41,4 +43,6 @@ vim.keymap.set("n", "<leader>wl", "<C-w>l")
 vim.keymap.set("n", "<leader>wv", "<C-w>v")
 vim.keymap.set("n", "<leader>ws", "<C-w>s")
 vim.keymap.set("n", "<leader>wc", "<cmd>q<CR>")
+vim.keymap.set("n", "<leader>wd", "<cmd>bd<CR>")
+vim.keymap.set("n", "<leader>wq", "<cmd>cclose<CR>")
 

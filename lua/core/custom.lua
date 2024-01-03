@@ -44,9 +44,20 @@ local function cmake_clean()
     end
 end
 
+local function make_build()
+    local project_root = find_project_root()
+    if project_root ~= nil then
+        local command = string.format('<cmd>:! cd %s && compiledb make SPEEDYBEEF405V3<CR>', project_root)
+        os.execute(command)
+        return command
+    else
+        return '<cmd>:lua print("NO project root")<CR>'
+    end
+end
 
 M.cmake_cofigure = cmake_project
 M.cmake_build = cmake_build
 M.cmake_clean = cmake_clean
+M.make_build = make_build
 
 return M
