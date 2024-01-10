@@ -18,6 +18,7 @@ local plugins = {
 	{ 'rose-pine/neovim', name = 'rose-pine' },
     { "rebelot/kanagawa.nvim" },
 	{'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
+    { 'nvim-treesitter/nvim-treesitter-refactor' },
 	{ 'mbbill/undotree' },
 	{
         'VonHeikemen/lsp-zero.nvim',
@@ -69,6 +70,31 @@ local plugins = {
             "nvim-telescope/telescope.nvim", -- optional
         },
         config = true
+    },
+    {
+        "christoomey/vim-tmux-navigator",
+        cmd = {
+            "TmuxNavigateLeft",
+            "TmuxNavigateDown",
+            "TmuxNavigateUp",
+            "TmuxNavigateRight",
+            "TmuxNavigatePrevious",
+        },
+        keys = {
+            { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+            { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+            { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+            { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+            { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+        },
+    },
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
+    {
+        'RRethy/vim-illuminate'
     }
 }
 local opts = {}

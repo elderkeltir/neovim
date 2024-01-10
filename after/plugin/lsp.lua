@@ -13,8 +13,8 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set('n', '<leader>os', vim.lsp.buf.document_symbol, opts)
     vim.keymap.set('n', '<leader>cR', vim.lsp.buf.rename, opts)
     --    vim.keymap.set('n', '<leader>cd', vim.diagnostic.open_float, opts)
-    --vim.keymap.set('n', '<leader>cdp', vim.diagnostic.goto_prev, opts)
-    --vim.keymap.set('n', '<leader>cdn', vim.diagnostic.goto_next, opts)
+    vim.keymap.set('n', '<leader>cp', vim.diagnostic.goto_prev, opts)
+    vim.keymap.set('n', '<leader>cn', vim.diagnostic.goto_next, opts)
     --vim.keymap.set('n', '<leader>cdq', vim.diagnostic.setloclist, opts)
 
     -- telescope floats
@@ -22,8 +22,7 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set('n', 'gd', builtin.lsp_definitions, opts)
     vim.keymap.set('n', '<leader>cm', builtin.lsp_document_symbols, opts)
     vim.keymap.set('n', '<leader>ps', builtin.lsp_dynamic_workspace_symbols, opts)
-    vim.keymap.set('n', '<leader>cd', builtin.diagnostics, {buffer=0, remap = false})
-    vim.keymap.set('n', '<leader>pe', builtin.diagnostics, opts)
+    vim.keymap.set('n', '<leader>cd', function() builtin.diagnostics({layout_strategy='center',layout_config={width=0.9}}) end, {buffer=0, remap = false})
     vim.keymap.set('n', '<leader>ci', builtin.lsp_implementations, opts)
 
     -- these are for checking
@@ -41,10 +40,8 @@ end)
 --lsp.setup_servers({'pyright'})
 
 require'lspconfig'.pyright.setup{}
-
+require'lspconfig'.autotools_ls.setup{}
 require'lspconfig'.clangd.setup{}
-
--- (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.setup()

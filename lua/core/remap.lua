@@ -25,8 +25,8 @@ vim.keymap.set("n", "<leader>ka", "<cmd>wa<CR>")
 vim.keymap.set("n", "<leader>kq", "<cmd>qa<CR>")
 
 --check this one
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-p>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>kk", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>kj", "<cmd>lprev<CR>zz")
 
