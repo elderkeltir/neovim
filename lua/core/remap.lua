@@ -46,3 +46,6 @@ vim.keymap.set("n", "<leader>wc", "<cmd>q<CR>")
 vim.keymap.set("n", "<leader>wd", "<cmd>bd<CR>")
 vim.keymap.set("n", "<leader>wq", "<cmd>cclose<CR>")
 
+vim.keymap.set("n", "zs", "z=")
+vim.keymap.set("n", "zn", "]s")
+vim.keymap.set("n", "zp", "[s")
