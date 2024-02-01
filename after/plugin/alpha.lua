@@ -36,6 +36,7 @@ dashboard.section.buttons.val = {
     dashboard.button('c', '  Configuration', ':e $MYVIMRC<CR>'),
     dashboard.button('l', '⟲  Open last session', ':SessionManager load_last_session<CR>'),
     dashboard.button('s', '  Open sessions', ':SessionManager load_session<CR>'),
+    dashboard.button('d', '  Delete sessions', ':SessionManager delete_session<CR>'),
     dashboard.button('q', '  Quit', ':qa<CR>'),
 }
 

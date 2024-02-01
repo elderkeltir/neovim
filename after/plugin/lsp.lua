@@ -44,4 +44,31 @@ require'lspconfig'.autotools_ls.setup{}
 require'lspconfig'.clangd.setup{}
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
+-- cmp
+local cmp = require("cmp")
+
+-- `/` cmdline setup.
+cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
+    }
+})
+
+-- `:` cmdline setup.
+cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+        {
+            name = 'cmdline',
+            option = {
+                ignore_cmds = { 'Man', '!' }
+            }
+        }
+    })
+})
+
+
 lsp.setup()
