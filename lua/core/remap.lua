@@ -34,6 +34,7 @@ vim.keymap.set('n', '<leader>pc', custom.cmake_cofigure(), {silent = false})
 vim.keymap.set('n', '<leader>pb', custom.cmake_build(), {silent = false})
 vim.keymap.set('n', '<leader>pr', custom.cmake_clean(), {silent = false})
 vim.keymap.set('n', '<leader>pm', custom.make_build(), {silent = false})
+vim.keymap.set('n', '<leader>pp', custom.make_standard_build(), {silent = true})
 
 -- window
 vim.keymap.set("n", "<leader>wk", "<C-w>k")

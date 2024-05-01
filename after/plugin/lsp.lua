@@ -7,7 +7,7 @@ lsp.on_attach(function(client, bufnr)
     --vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
 
-    --vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', 'go', vim.cmd.ClangdSwitchSourceHeader)
     vim.keymap.set('n', '<leader>cr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<leader>os', vim.lsp.buf.document_symbol, opts)
@@ -43,6 +43,7 @@ require'lspconfig'.pyright.setup{}
 require'lspconfig'.autotools_ls.setup{}
 require'lspconfig'.clangd.setup{}
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+require('lspconfig').cmake.setup{}
 
 -- cmp
 local cmp = require("cmp")

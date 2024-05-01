@@ -14,8 +14,8 @@ end
 local function cmake_project()
     local project_root = find_project_root()
     if project_root ~= nil then
-        local command = string.format('<cmd>:! cd %s && cmake -S ./ -B ./build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER:FILEPATH=/usr/local/bin/clang16 -DCMAKE_CXX_COMPILER:FILEPATH=/usr/local/bin/clang++16 -G Ninja<CR>', project_root)
-        --os.execute(command)
+        local command = string.format('<cmd>:! cd %s && cmake -S ./ -B ./build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug -G Ninja<CR>', project_root)
+        os.execute(command)
         return command
     else
         return ""
@@ -26,7 +26,7 @@ local function cmake_build()
     local project_root = find_project_root()
     if project_root ~= nil then
         local command = string.format('<cmd>:! cd %s/build && ninja<CR>', project_root)
-        --os.execute(command)
+        os.execute(command)
         return command
     else
         return ""
@@ -37,7 +37,7 @@ local function cmake_clean()
     local project_root = find_project_root()
     if project_root ~= nil then
         local command = string.format('<cmd>:! cd %s && rm -rf build<CR>', project_root)
-        --os.execute(command)
+        os.execute(command)
         return command
     else
         return ""
@@ -55,9 +55,21 @@ local function make_build()
     end
 end
 
+local function make_standard_build()
+    local project_root = find_project_root()
+    if project_root ~= nil then
+        local command = string.format('<cmd>:! tmux split-window -v -c "%s" "make clean; make; read"<CR>', project_root)
+        os.execute(command)
+        return command
+    else
+        return '<cmd>:lua print("NO project root")<CR>'
+    end
+end
+
 M.cmake_cofigure = cmake_project
 M.cmake_build = cmake_build
 M.cmake_clean = cmake_clean
 M.make_build = make_build
+M.make_standard_build = make_standard_build
 
 return M
